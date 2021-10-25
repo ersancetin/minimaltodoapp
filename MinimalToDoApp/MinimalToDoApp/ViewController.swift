@@ -132,22 +132,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             fetchRequest.returnsObjectsAsFaults = false
           
-            do {
-                let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-                if results?.count != 0 { // Atleast one was returned
 
-                    results?[0].setValue(true, forKey: "done")
-                }
-            } catch {
-                print("Fetch Failed: \(error)")
-            }
-
-            do {
-                try context.save()
-               }
-            catch {
-                print("Saving Core Data Failed: \(error)")
-            }
           
             self.tableView.reloadData()
           
