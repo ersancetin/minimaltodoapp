@@ -130,7 +130,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             fetchRequest.predicate = NSPredicate(format: "id = %@ ", idString)
             
-            fetchRequest.returnsObjectsAsFaults = false
           
 
           
